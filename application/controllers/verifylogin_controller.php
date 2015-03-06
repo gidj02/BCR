@@ -53,8 +53,8 @@ function check_database($password)
    }
    else
    {
-   		echo "<script type='text/javascript'>alert('Invalid username or password');</script>";
-   		redirect('main_controller', 'refresh');
+   	echo "<script type='text/javascript'>alert('Invalid username or password');</script>";
+		redirect('main_controller', 'refresh');
 		$this->form_validation->set_message('check_database', 'Invalid username or password');
 		return false;
    }

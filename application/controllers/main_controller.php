@@ -7,7 +7,7 @@ class Main_Controller extends MY_Controller{
 			$this->load->helper(array('form', 'url', 'html'));
 	}
 
-	 function index()
+	function index()
 	{
 	   if($this->session->userdata('logged_in'))
 	   {
