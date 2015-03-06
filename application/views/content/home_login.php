@@ -14,7 +14,7 @@
                     <!--Showed when login button is clicked-->
                     <div id ="div-login-form" style="visibility: hidden; display:none">
                         <?php echo validation_errors(); ?>
-                        <?php echo form_open("verifylogin_controller"); ?>
+                        <?php echo form_open("user_controller/user_login"); ?>
                             <br><h2>Login to BCR</h2>
                             <br><?php echo form_input(array("name" => "username", "placeholder" => "Username", "class" => "form-control", "aria-describedby" => "basic-addon2")); ?>
                             <br><?php echo form_password(array("name" => "password", "placeholder" => "Password", "class" => "form-control", "aria-describedby" => "basic-addon2")); ?>
@@ -28,7 +28,7 @@
                         <br><h2>register to BCR</h2>
                         <p>Know the Best Crop Rotation for you Farm.</p>
                         <?php echo validation_errors(); ?>
-                        <?php echo form_open("verifylogin_controller"); ?>     
+                        <?php echo form_open("user_controller/user_registration"); ?>     
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="input-group">
@@ -96,6 +96,14 @@
                                 </div><!-- /input-group -->
                             </div><!-- /.col-lg-6 -->
                             <div class="col-lg-6">
+                                <div class="input-group">
+                                    <input name = "txtgender" type = "text" class = "form-control" placeholder = "gender" aria-describedby = "basic-addon2">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" style="color:red">&#x2717</button>
+                                    </span>
+                                </div><!-- /input-group -->
+                            </div><!-- /.col-lg-6 -->
+                          <!--   <div class="col-lg-6">
                             <div class="input-group">
                               <input type="text" class="form-control" placeholder = "choose gender" readonly="readonly">
                               <div class="input-group-btn">
@@ -106,9 +114,9 @@
                                   <li class="divider"></li>
                                   <li><a href="#">Other Please Specify</a></li>
                                 </ul>
-                              </div><!-- /btn-group -->
+                              </div><!-- /btn-group
                             </div><!-- /input-group -->
-                          </div><!-- /.col-lg-6 -->
+                          <!-- </div>/.col-lg-6 --> 
                         </div><!-- /.row -->
 <!--                             <br><input name = "txtgender" type = "text" class = "form-control" placeholder = "gender" aria-describedby = "basic-addon2"> -->
                             <br><input type = "submit" id = "btn-register-submit" class="btn btn-default btn-lg" value="Register">
