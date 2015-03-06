@@ -1,4 +1,4 @@
-<!-- Download Section -->
+<!-- login/register Section -->
     <section id="login" class="content-section text-center">
         <div class="download-section">
             <div class="container">
@@ -33,7 +33,7 @@
                             <div class="col-lg-6">
                                 <div class="input-group">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Go!</button>
+                                        <button class="btn btn-default" type="button" style="color:red">&#x2717</button>
                                     </span>
                                     <input name = "txtusername" type = "text" class = "form-control" placeholder = "username" aria-describedby = "basic-addon2">
                                 </div><!-- /input-group -->
@@ -42,7 +42,7 @@
                                 <div class="input-group">
                                     <input name = "txtpassword" type = "text" class = "form-control" placeholder = "password" aria-describedby = "basic-addon2">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Go!</button>
+                                        <button class="btn btn-default" type="button" style="color:red">&#x2717</button>
                                     </span>
                                 </div><!-- /input-group -->
                             </div><!-- /.col-lg-6 -->
@@ -52,7 +52,7 @@
                             <div class="col-lg-6">
                                 <div class="input-group">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Go!</button>
+                                        <button class="btn btn-default" type="button" style="color:red">&#x2717</button>
                                     </span>
                                     <input name = "txtfirst" type = "text" class = "form-control" placeholder = "first name" aria-describedby = "basic-addon2">
                                 </div><!-- /input-group -->
@@ -61,7 +61,7 @@
                                 <div class="input-group">
                                     <input name = "txtlast" type = "text" class = "form-control" placeholder = "last name" aria-describedby = "basic-addon2">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Go!</button>
+                                        <button class="btn btn-default" type="button" style="color:red">&#x2717</button>
                                     </span>
                                 </div><!-- /input-group -->
                             </div><!-- /.col-lg-6 -->
@@ -71,7 +71,7 @@
                             <div class="col-lg-6">
                                 <div class="input-group">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Go!</button>
+                                        <button class="btn btn-default" type="button" style="color:red">&#x2717</button>
                                     </span>
                                     <input name = "txtemail" type = "text" class = "form-control" placeholder = "email" aria-describedby = "basic-addon2">
                                 </div><!-- /input-group -->
@@ -80,7 +80,7 @@
                                 <div class="input-group">
                                     <input name = "txtcontact" type = "text" class = "form-control" placeholder = "contact number" aria-describedby = "basic-addon2">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Go!</button>
+                                        <button class="btn btn-default" type="button" style="color:red">&#x2717</button>
                                     </span>
                                 </div><!-- /input-group -->
                             </div><!-- /.col-lg-6 -->
@@ -90,7 +90,7 @@
                             <div class="col-lg-6">
                                 <div class="input-group">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Go!</button>
+                                        <button class="btn btn-default" type="button" style="color:red">&#x2717</button>
                                     </span>
                                     <input name = "txtage" type = "text" class = "form-control" placeholder = "age" aria-describedby = "basic-addon2">
                                 </div><!-- /input-group -->
