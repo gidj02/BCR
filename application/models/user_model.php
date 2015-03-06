@@ -26,9 +26,9 @@ class User_model extends MY_Model{
 	public function registration($data) {
 
 		// Query to check whether username already exist or not
-		$condition = "user_name =" . "'" . $data['user_name'] . "'";
+		$condition = "username =" . "'" . $data['username'] . "'";
 		$this->db->select('*');
-		$this->db->from('user_login');
+		$this->db->from('user');
 		$this->db->where($condition);
 		$this->db->limit(1);
 		$query = $this->db->get();

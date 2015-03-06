@@ -103,25 +103,20 @@
                                     </span>
                                 </div><!-- /input-group -->
                             </div><!-- /.col-lg-6 -->
-                          <!--   <div class="col-lg-6">
-                            <div class="input-group">
-                              <input type="text" class="form-control" placeholder = "choose gender" readonly="readonly">
-                              <div class="input-group-btn">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-                                <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                  <li><a href="#">Male</a></li>
-                                  <li><a href="#">Female</a></li>
-                                  <li class="divider"></li>
-                                  <li><a href="#">Other Please Specify</a></li>
-                                </ul>
-                              </div><!-- /btn-group
-                            </div><!-- /input-group -->
-                          <!-- </div>/.col-lg-6 --> 
-                        </div><!-- /.row -->
-<!--                             <br><input name = "txtgender" type = "text" class = "form-control" placeholder = "gender" aria-describedby = "basic-addon2"> -->
-                            <br><input type = "submit" id = "btn-register-submit" class="btn btn-default btn-lg" value="Register">
+                        </div><!-- /.row-->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" style="color:red">&#x2717</button>
+                                    </span>
+                                    <input name = "txtaddress" type = "text" class = "form-control" placeholder = "address" aria-describedby = "basic-addon2">
+                                </div><!-- /input-group -->
+                            </div><!-- /.col-lg-6 -->
+                        </div>
+                        <br><input type = "submit" id = "btn-register-submit" class="btn btn-default btn-lg" value="Register">
                         </form>
-                            <button id = "btn-back-register" class="btn btn-default btn-lg">Back</button>
+                        <button id = "btn-back-register" class="btn btn-default btn-lg">Back</button>
                     </div>
                 </div>
             </div>
