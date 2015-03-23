@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2015 at 05:07 PM
+-- Generation Time: Mar 23, 2015 at 08:07 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -24,18 +24,65 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `main_process`(IN `prevcrops` VARCHAR(20), IN `climate` VARCHAR(20), IN `soil` VARCHAR(20), IN `month` VARCHAR(20))
-    MODIFIES SQL DATA
+CREATE DEFINER=`root`@`localhost` PROCEDURE `main_process`(IN `pprevcrop` VARCHAR(20), IN `pclimate` VARCHAR(20), IN `psoil` VARCHAR(20), IN `pmonth` VARCHAR(20))
+    NO SQL
 BEGIN
 	
- DECLARE res double(4,2) DEFAULT 0.000;
+ DECLARE vprevcrops double(5,4) DEFAULT 0.000;
+ DECLARE vklima double(5,4) DEFAULT 0.000;
+ DECLARE vsoil double(5,4) DEFAULT 0.000;
+ DECLARE vmonth double(5,4) DEFAULT 0.000;
+ DECLARE prior int(4) DEFAULT 0;
+ DECLARE likelihood int(4) DEFAULT 0;
+ DECLARE proba double(5,4) DEFAULT 0.000;
+ declare i int (4) default 1;
+ declare n int (4) default 50;
+ declare cropname varchar (20);
  
- select prevcrops;
  
- set res =   (SELECT COUNT(crop) FROM data where crop = 'Onion' and prevcrop = prevcrops)/(SELECT COUNT(crop) FROM data where crop = 'Onion') ;
- select res;
+ 
+ while i <= n do
+ 
+ SELECT crop into cropname FROM prob_table WHERE crop_id = i;
+ select cropname;
+ 
 
-    
+ set prior = (SELECT COUNT(crop) FROM data where crop = cropname); 
+ 
+ set likelihood = (SELECT COUNT(crop) FROM data where crop = cropname and prevcrop = pprevcrop) ;
+ set vprevcrops = (likelihood/prior);
+ select prior, likelihood, vprevcrops;
+ 
+ set likelihood = (SELECT COUNT(crop) FROM data where crop = cropname and klima = pclimate) ;
+ set vklima = (likelihood/prior);
+ 
+ 
+ select prior, likelihood, vklima;
+ 
+ set likelihood = (SELECT COUNT(crop) FROM data where crop = cropname and soil = psoil) ;
+ set vsoil = (likelihood/prior);
+ 
+ 
+ select prior, likelihood, vsoil;
+ 
+ set likelihood = (SELECT COUNT(crop) FROM data where crop = cropname and month = pmonth) ;
+ set vmonth = (likelihood/prior);
+ 
+ 
+ select prior, likelihood, vmonth;
+ 
+ 
+ set proba = (vmonth*vsoil*vklima*vprevcrops);
+ select proba;
+ 
+ update prob_table set prob = proba where crop_id = i;
+ 
+ set i = i+1;
+ 
+ 
+ end while;
+ 
+ 
     
     
 END$$
@@ -56,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `data` (
   `month` varchar(30) NOT NULL,
   `production` char(1) NOT NULL,
 `dataid` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `data`
@@ -77,7 +124,9 @@ INSERT INTO `data` (`crop`, `prevcrop`, `klima`, `soil`, `month`, `production`, 
 ('Onion', 'Lettuce', 'Mainit', 'Loamy', 'January', 'G', 12),
 ('Onion', 'Lettuce', 'Mainit', 'Loamy', 'January', 'G', 13),
 ('Onion', 'Raddish', 'Mainit', 'Loamy', 'January', 'G', 14),
-('Onion', 'Canola', 'Mainit', 'Loamy', 'January', 'G', 15);
+('Onion', 'Canola', 'Mainit', 'Loamy', 'January', 'G', 15),
+('Onion', 'Canola', 'Mainit', 'Sandy', 'March', 'G', 16),
+('Onion', 'Raddish', 'Mainit', 'Loamy', 'March', 'G', 17);
 
 -- --------------------------------------------------------
 
@@ -96,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `prob_table` (
 --
 
 INSERT INTO `prob_table` (`crop_id`, `crop`, `prob`) VALUES
-(1, 'Onion', 0),
+(1, 'Onion', 0.108),
 (2, 'Scallion', 0),
 (3, 'Leek', 0),
 (4, 'Garlic', 0),
@@ -226,7 +275,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data`
 --
 ALTER TABLE `data`
-MODIFY `dataid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `dataid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `prob_table`
 --
