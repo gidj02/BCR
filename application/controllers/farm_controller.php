@@ -5,7 +5,7 @@ class Farm_Controller extends MY_Controller{
    function __construct()
    {
       parent::__construct();
-      $this->load->model('user_model','',TRUE);
+      $this->load->model('farm_model','',TRUE);
 
       //This method will have the credentials validation
       $this->load->library('form_validation');
@@ -35,7 +35,13 @@ class Farm_Controller extends MY_Controller{
             'month' => $this->input->post('month'),
          );
 
-         $this->process($data);
+         $result = $this->farm_model->getuser($data);
+
+
+         foreach ($result as $value) {
+            echo "<script type='text/javascript'>alert('$value->name');</script>";
+         }
+         // $this->process($data);
       }
    }
 
