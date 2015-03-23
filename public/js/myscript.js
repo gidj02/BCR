@@ -26,6 +26,13 @@ $(document).ready(function(){
     							  "display":"initial"
     							});
     });
+
+     $("#btn-history").click(function () {
+		$("#div-input-choices").hide();
+    	$("#div-history").css({"visibility":"initial",
+    							  "display":"initial"
+    							});
+    });
 });
 
 $(function(){
@@ -47,9 +54,16 @@ $(function(){
 	});		
 
 	$("#btn-back-input").click(function(){
-		$("#div-input-choice").show();
-		$("#div-register-form").hide();
+		$("#div-input-choices").show();
+		$("#div-history").hide();
 		$("#div-input-form").hide();
 	});		
+
+
+	$("#btn-back-history").click(function(){
+		$("#div-input-choices").show();
+		$("#div-history").hide();
+		$("#div-input-form").hide();
+	});	
 });
 	
