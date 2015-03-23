@@ -11,7 +11,7 @@ class Farm_Controller extends MY_Controller{
       $this->load->library('form_validation');
    }
     
-   function input()
+   public function input()
    {
       $this->form_validation->set_rules('previouscrop', 'Previous Crop', 'trim|required|xss_clean');
       $this->form_validation->set_rules('climate', 'Climate', 'trim|required|xss_clean');
@@ -35,13 +35,13 @@ class Farm_Controller extends MY_Controller{
             'month' => $this->input->post('month'),
          );
 
-         $this->process($data)
+         $this->process($data);
       }
    }
 
-   function process($data)
+   public function process($data)
    {
-      
+
    }
 }
 ?>
