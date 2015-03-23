@@ -19,6 +19,13 @@ $(document).ready(function(){
     							  "display":"initial"
     							});
     });
+
+    $("#btn-input").click(function () {
+		$("#div-input-choices").hide();
+    	$("#div-input-form").css({"visibility":"initial",
+    							  "display":"initial"
+    							});
+    });
 });
 
 $(function(){
@@ -37,6 +44,12 @@ $(function(){
 		$("#div-login-form").hide();
 		$("#div-register-form").hide();
 		$("#div-choices").show();
+	});		
+
+	$("#btn-back-input").click(function(){
+		$("#div-input-choice").show();
+		$("#div-register-form").hide();
+		$("#div-input-form").hide();
 	});		
 });
 	
