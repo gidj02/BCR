@@ -76,7 +76,8 @@ class User_Controller extends MY_Controller{
       if ($this->form_validation->run() == FALSE) {
          echo "<script type='text/javascript'>alert('Field Validation Failed.');</script>";
          $this->render('home', 'homenav');
-      } else {
+      } 
+      else {
          $data = array(
             'name' => $this->input->post('txtfirst'),
             'surname' => $this->input->post('txtlast'),

@@ -13,7 +13,7 @@
 
                     <!--Showed when login button is clicked-->
                     <div id ="div-input-form" style="visibility: hidden; display:none">
-                        <?php echo form_open("form_controller/input"); ?>
+                        <?php echo form_open("farm_controller/input"); ?>
                             <br><h2>login to BCR</h2>
                             <p>Please enter your situation.</p>
                             <br><?php echo form_input(array("name" => "previouscrop", "placeholder" => "Previous Crop", "class" => "form-control", "aria-describedby" => "basic-addon2")); ?>
