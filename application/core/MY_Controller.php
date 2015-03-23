@@ -2,6 +2,11 @@
 
 class MY_Controller extends CI_Controller{
 
+    public function __construct() {
+        parent::__construct();
+        $this->output->enable_profiler(TRUE);
+    }
+    
 	public function render($view, $nav){
 		$this->load->view('template/header');
 		$this->load->view('template/'.$nav);
