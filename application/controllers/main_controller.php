@@ -14,7 +14,7 @@ class Main_Controller extends MY_Controller{
 			$session_data = $this->session->userdata('logged_in');
 			$data['username'] = $session_data['username'];
 			// $this->load->view('home_view', $data); TO PASS DATA USERNAME
-			$this->render('userpage', 'usernav');
+			$this->render('userpage', 'usernav', NULL);
 	   }
 	   else
 	   {
@@ -32,6 +32,6 @@ class Main_Controller extends MY_Controller{
 	}
 
 	public function home(){
-		$this->render('home', 'homenav');
+		$this->render('home', 'homenav', NULL);
 	}
 }

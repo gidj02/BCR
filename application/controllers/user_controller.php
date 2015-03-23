@@ -20,7 +20,7 @@ class User_Controller extends MY_Controller{
       {
    		//Field validation failed.  User redirected to login page
          echo "<script type='text/javascript'>alert('Field Validation Failed.');</script>";
-   		$this->render('home', 'homenav');		
+   		$this->render('home', 'homenav', NULL);		
       }
       else
       {
@@ -75,7 +75,7 @@ class User_Controller extends MY_Controller{
       
       if ($this->form_validation->run() == FALSE) {
          echo "<script type='text/javascript'>alert('Field Validation Failed.');</script>";
-         $this->render('home', 'homenav');
+         $this->render('home', 'homenav', NULL);
       } 
       else {
          $data = array(

@@ -7,7 +7,7 @@ class MY_Controller extends CI_Controller{
         $this->output->enable_profiler(TRUE);
     }
     
-	public function render($view, $nav){
+	public function render($view, $nav, $data){
 		$this->load->view('template/header');
 		$this->load->view('template/'.$nav);
 		// $this->load->view('content/home'.$view);
@@ -21,6 +21,12 @@ class MY_Controller extends CI_Controller{
 			$this->load->view('content/user_header');
 			$this->load->view('content/user_profile');
 			$this->load->view('content/user_myfarm');
+			$this->load->view('content/user_logout');
+		}
+		else if($view == 'userresult'){
+			$this->load->view('content/user_header');
+			$this->load->view('content/user_profile');
+			$this->load->view('content/user_myfarm_result', $data);
 			$this->load->view('content/user_logout');
 		}
 		$this->load->view('template/footer');

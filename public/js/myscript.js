@@ -33,6 +33,8 @@ $(document).ready(function(){
     							  "display":"initial"
     							});
     });
+
+
 });
 
 $(function(){
@@ -64,6 +66,7 @@ $(function(){
 		$("#div-input-choices").show();
 		$("#div-history").hide();
 		$("#div-input-form").hide();
-	});	
+	});		
 });
+
 	

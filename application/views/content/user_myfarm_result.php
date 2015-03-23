@@ -3,10 +3,27 @@
         <div class="download-section">
             <div class="container">
                 <div id = "div-login" class="col-lg-8 col-lg-offset-2">
-                    <!--Initial display of login division-->
-                    <div id = "div-input-choices">
+                    <div id ="div-result">
+                        <h2>Crops Suited For Your Farm.</h2>
+                        <p>These crops are applicable for current situation,</br> please choose one.</p>
+                        <select id="cropsselectid" name="cropsselect">
+                        <?php
+                            $id = 0;
+                            while ($row = mysql_fetch_row($result)) {
+                                echo "<option value=\"$id\">{$row[0]}</option>";
+                                $id++;
+                            }
+                        ?>
+                        </select>
+                         <?php echo form_open("farm_controller/insertseason"); ?>
+                            <button id = "btn-back-input" class="btn btn-default btn-lg">Select Crop</button>
+                         <?php echo form_close(); ?>
+                    </div>
+
+
+                    <div id = "div-input-choices" style="visibility: hidden; display:none">
                         <h2>My Farm</h2>
-                        <p>Navigate to your farm.</p>
+                        <p>Navigate to your farm.</p>   
                         <button id = "btn-input" class="btn btn-default btn-lg">Input</button>
                         <button id = "btn-history" class="btn btn-default btn-lg">History</button>
                     </div>  
@@ -25,13 +42,7 @@
                             <button id = "btn-back-input" class="btn btn-default btn-lg">Back</button>
                     </div>
 
-                    <div id ="div-result" style="visibility: hidden; display:none">
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                        <li><a tabindex="-1" href="#">Regular link</a></li>
-                        <li class="disabled"><a tabindex="-1" href="#">Disabled link</a></li>
-                        <li><a tabindex="-1" href="#">Another link</a></li>
-                        </ul>
-                    </div>
+                    
 
                     <!--Showed when register button is clicked-->
                     <div id ="div-history" style="visibility: hidden; display:none">

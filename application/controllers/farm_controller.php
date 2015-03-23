@@ -22,7 +22,7 @@ class Farm_Controller extends MY_Controller{
       {
    		//Field validation failed.  User redirected to login page
          echo "<script type='text/javascript'>alert('Field Validation Failed.');</script>";
-   		$this->render('userpage', 'usernav');		
+   		$this->render('userpage', 'usernav', NULL);		
       }
       else
       {
@@ -35,17 +35,23 @@ class Farm_Controller extends MY_Controller{
             'month' => $this->input->post('month'),
          );
 
-         $result = $this->farm_model->getuser($data);
+         $this->process($data);
+         // $result = $this->farm_model->getuser($data);
 
 
-         foreach ($result as $value) {
-            echo "<script type='text/javascript'>alert('$value->name');</script>";
-         }
+         // foreach ($result as $value) {
+         //    echo "<script type='text/javascript'>alert('$value->name');</script>";
+         // }
          // $this->process($data);
       }
    }
 
    public function process($data)
+   {
+      $this->render('userresult', 'usernav', $data);
+   }
+
+   public function insertseason()
    {
 
    }

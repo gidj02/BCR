@@ -27,14 +27,14 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-	   <script style="" src="https://maps.gstatic.com/maps-api-v3/api/js/19/7a/common.js" charset="UTF-8" type="text/javascript"></script>
+	  <!-- <script style="" src="https://maps.gstatic.com/maps-api-v3/api/js/19/7a/common.js" charset="UTF-8" type="text/javascript"></script>
 	   <script src="https://maps.gstatic.com/maps-api-v3/api/js/19/7a/map.js" charset="UTF-8" type="text/javascript"></script>
 	   <script src="https://maps.gstatic.com/maps-api-v3/api/js/19/7a/util.js" charset="UTF-8" type="text/javascript"></script>
 	   <script src="https://maps.gstatic.com/maps-api-v3/api/js/19/7a/marker.js" charset="UTF-8" type="text/javascript"></script>
 	   <script src="https://maps.gstatic.com/maps-api-v3/api/js/19/7a/onion.js" charset="UTF-8" type="text/javascript"></script>
 	   <script src="https://maps.gstatic.com/maps-api-v3/api/js/19/7a/controls.js" charset="UTF-8" type="text/javascript"></script>
 	   <script src="https://maps.gstatic.com/maps-api-v3/api/js/19/7a/stats.js" charset="UTF-8" type="text/javascript"></script>
-
+-->
 
 	    <!-- jQuery -->
 	    <script src="<?php echo base_url();?>public/js/jquery.js"></script>
