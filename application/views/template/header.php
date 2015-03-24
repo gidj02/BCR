@@ -45,8 +45,8 @@
 	    <!-- Plugin JavaScript -->
 	    <script src="<?php echo base_url();?>public/js/jquery.easing.min.js"></script>
 
-	    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-	    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&amp;sensor=false"></script><script src="https://maps.gstatic.com/maps-api-v3/api/js/19/7a/main.js"></script>
+	    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ 
+	    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&amp;sensor=false"></script><script src="https://maps.gstatic.com/maps-api-v3/api/js/19/7a/main.js"></script>-->
 
 	    <!-- Custom Theme JavaScript -->
 	    <script src="<?php echo base_url();?>public/js/grayscale.js"></script>

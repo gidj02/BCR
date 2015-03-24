@@ -32,6 +32,8 @@ $(document).ready(function(){
     	$("#div-history").css({"visibility":"initial",
     							  "display":"initial"
     							});
+
+    	
     });
 
 

@@ -28,32 +28,51 @@ class Farm_Controller extends MY_Controller{
       {
    		//Go to private area
    		// redirect('main_controller', 'refresh');
-         $data = array(
+         $data['data'] = array(
             'prevcrop' => $this->input->post('previouscrop'),
             'climate' => $this->input->post('climate'),
             'soiltype' => $this->input->post('soiltype'),
             'month' => $this->input->post('month'),
          );
-
-         $this->process($data);
-         // $result = $this->farm_model->getuser($data);
-
-
-         // foreach ($result as $value) {
-         //    echo "<script type='text/javascript'>alert('$value->name');</script>";
+         // $result = $this->farm_model->getcrops($data);
+         // foreach ($result as  $value) {
+         //    echo "<script type='text/javascript'>alert('$value->crop_id');</script>";
          // }
-         // $this->process($data);
+         $this->process($data);
       }
    }
 
    public function process($data)
    {
+      // $crop['result'] = array(array());
+      // $result = $this->farm_model->getcrops($data);
+      // foreach ($result as  $value) {
+      //    $crop['result'] = (String)$value->crop;
+      //    // echo "<script type='text/javascript'>alert('$value->crop');</script>";
+      // }
+
       $this->render('userresult', 'usernav', $data);
    }
 
-   public function insertseason()
-   {
+   public function insertdata(){
+      $crop = $this->input->post('croplist');
+      $id = $this->input->post('id');
+      $climate = $this->input->post('climate');
+      $soiltype = $this->input->post('soil');
 
+      $data = array(
+         'pname' => $crop,
+         'pclimate' => $climate,
+         'psoiltype' => $soiltype,
+         'pdate' => 1,
+         'puserid' => $id
+         );
+      if($this->input->post('input_crop')){
+         $this->farm_model->insertdata($data);
+         echo "<script type='text/javascript'>alert('Successfully Recorded!');</script>";
+      }
+
+      redirect('main_controller', 'refresh');
    }
 }
 ?>

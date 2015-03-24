@@ -38,26 +38,51 @@
                         <div class="panel panel-warning">
                             <!-- Default panel contents -->
                             <div class="panel-heading">Farm's history</div>
-                            <div class="panel-body">
-                                <p style="color:black">This is the table that contains the history of your farm. </br>
-                                    It includes the production of your farm, and the factors.</p>
-                            </div>
+                         
+                            <?php
+                                $user_id = $this->session->userdata['logged_in']['id']; 
+                                // $condition = "userid =" . "'" . $user_id . "'";
+                                // $this->db->select('*');
+                                // $this->db->from('season');
+                                // $this->db->where($condition);
+                                // $query = $this->db->get();
+                                echo "<script type='text/javascript'>alert('$user_id!');</script>";
+                                $query = $this->db->query("SELECT * from season WHERE userid=".$user_id."");
 
-                            <!-- Table -->
-                            <table class="table" style="color:black; text-align:center;">
-                                <tr>
-                                    <td>Season</td>
-                                    <td>Crop Planted</td>
-                                    <td>Climate</td>
-                                    <td>Soil Type</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Wheat</td>
-                                    <td>Fall</td>
-                                    <td>Clay</td>
-                                </tr>
-                            </table>
+                                if ($query->num_rows() > 0) {
+                                    // Query to insert data in database
+                                    echo "
+                                    <div class='panel-body'>
+                                        <p style='color:black'>This is the table that contains the history of your farm. </br>
+                                            It includes the production of your farm, and the factors.</p>
+                                    </div>";
+                                    echo "
+                                    <table class='table' style='color:black; text-align:center;'>";
+                                    echo "<tr>
+                                        <td>Season</td>
+                                        <td>Crop Planted</td>
+                                        <td>Climate</td>
+                                        <td>Soil Type</td>
+                                        <td>Date</td>
+                                    </tr>";
+
+                                    while($row = mysql_fetch_array($query)){
+                                        echo "<tr>
+                                            <td>".$row['seasonid']."</td>
+                                            <td>{$row['name']}</td>
+                                            <td>{$row['climate']}</td>
+                                            <td>{$row['soiltype']}</td>
+                                            <td>{$row['date']}</td>
+                                        </tr>";
+                                    }
+                                    echo " </table>";
+                                }else {
+                                     echo "<div class='panel-body'>
+                                        <p style='color:black'>Your farm have no history yet. </br>
+                                            Please click the input to start.</p>
+                                    </div>";
+                                }
+                            ?>
                         </div>
                         <button id = "btn-back-history" class="btn btn-default btn-lg">Back</button>
                     </div>
